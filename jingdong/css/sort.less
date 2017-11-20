@@ -1,0 +1,68 @@
+@import url("./base.less");
+html,
+body,
+.view {
+    height: 100%;
+}
+
+
+/* 
+父元素给padding
+一个子元素 绝对定位
+另外一个子元素 宽度或者高度 100% 
+ */
+
+ .view{
+     padding-top: 50px;
+     position: relative;
+     header{
+        height: 50px;
+        background-color: yellow;
+        position: absolute;
+        top: 0;
+        width: 100%;
+     }
+     .container{
+         height: 100%;
+         background: skyblue;
+         padding-left:80px;
+         position: relative; 
+         .left_box{
+             height: 100%;
+             width: 80px;
+             overflow: hidden;
+             position: absolute;
+             left:0;
+             top:0;
+             ul{
+                 li{
+                     border-right:1px solid #000; 
+                     border-bottom:1px solid #000; 
+                     a{
+                         height: 40px;
+                         background:#fff;
+                         color: inherit;
+                         text-align: center;
+                         line-height: 40px;
+                     }
+                 }
+                 .active{
+                     color: rgb(0, 255, 191);
+                     border-right:none; 
+                 }
+             }
+         }
+         .right_box{
+             height: 100%;
+             width: 100%;
+            //  background: honeydew;
+            overflow: hidden;
+            ul{
+                li{
+                    float: left;
+                    width: 33.33%;
+                }
+            }
+         }
+     }
+ }

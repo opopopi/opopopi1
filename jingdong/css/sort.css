@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.clearfix:after {
+  display: block;
+  content: "";
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+html,
+body,
+.view {
+  height: 100%;
+}
+/* 
+父元素给padding
+一个子元素 绝对定位
+另外一个子元素 宽度或者高度 100% 
+ */
+.view {
+  padding-top: 50px;
+  position: relative;
+}
+.view header {
+  height: 50px;
+  background-color: yellow;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.view .container {
+  height: 100%;
+  background: skyblue;
+  padding-left: 80px;
+  position: relative;
+}
+.view .container .left_box {
+  height: 100%;
+  width: 80px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.view .container .left_box ul li {
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.view .container .left_box ul li a {
+  height: 40px;
+  background: #fff;
+  color: inherit;
+  text-align: center;
+  line-height: 40px;
+}
+.view .container .left_box ul .active {
+  color: #00ffbf;
+  border-right: none;
+}
+.view .container .right_box {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.view .container .right_box ul li {
+  float: left;
+  width: 33.33%;
+}

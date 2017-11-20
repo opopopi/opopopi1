@@ -1,0 +1,381 @@
+@import url("./base.less");
+.jd_sprites(@x,
+@y) {
+    background-image: url("../images/jd-sprites.png");
+    background-size: 200px 200px;
+    background-position: @x @y ;
+}
+
+@color: #c91523;
+// 头部
+header {
+    height: 40px;
+    width: 100%;
+    background-color: rgba(201, 21, 35, 0);
+    ;
+    padding: 5px 50px 5px 70px;
+    position: fixed;
+    z-index: 10;
+    a {
+        position: absolute;
+        top: 0;
+    }
+    .search {
+        height: 100%;
+        border-radius: 50px;
+        overflow: hidden;
+        position: relative;
+        &::after {
+            display: block;
+            content: ""; // // background-size: 200px 200px;
+            // background: url("../images/jd-sprites.png") no-repeat -120px -220px;
+            .jd_sprites(-60px,
+            -110px);
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 6px;
+            left: 10px;
+        }
+        input {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+            text-indent: 30px;
+        }
+    }
+    .logo {
+        left: 0;
+        width: 70px;
+        height: 40px; // background: url("../images/jd-sprites.png")no-repeat 0 -110px;
+        .jd_sprites(0,
+        -110px);
+        text-indent: -999em;
+        background-size: 200px 200px;
+        background-origin: content-box;
+        background-clip: content-box;
+        padding: 7px 6px;
+    }
+    .login {
+        right: 0;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        width: 50px;
+    }
+}
+
+//轮播图
+.carousel {
+    overflow: hidden;
+    position: relative;
+    .carousel_list {
+        width: 1000%;
+        li {
+            float: left;
+            width: 10%;
+        }
+    } //索引器
+    .indexer {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5px;
+        li {
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            margin-left: 5px;
+        }
+        .active {
+            background-color: skyblue;
+        }
+    }
+}
+
+//首页导航
+nav {
+    ul {
+        li {
+            float: left;
+            width: 25%;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            a {
+                padding: 5px 0;
+                img {
+                    width: 50%;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+//掌上秒杀
+.hand_kill {
+    padding: 5px;
+    .kill_title {
+        .clock {
+            margin-left: 10px;
+        }
+        .seckill {
+            color: skyblue;
+        }
+        .timer {
+            display: inline-block;
+            font-size: 0;
+            >span {
+                background: #000;
+                color: #fff;
+                padding: 0 2px;
+                font-size: 16px;
+                margin-left: 3px;
+            }
+            >span:nth-child(3n) {
+                background: #fff;
+                color: #000;
+            }
+        }
+        >a {
+            float: right;
+            color: red;
+        }
+    }
+    .seckill_content {
+        padding-top: 10px;
+        ul {
+            li {
+                float: left;
+                width: 33.33%;
+                text-align: center;
+                a {
+                    position: relative;
+                    .hot_sell {
+                        background-color: #fdb60a;
+                        color: #fff;
+                        border-radius: 50%;
+                        padding: 3px 7px;
+                        font-size: 14px;
+                        position: absolute;
+                        top: 60%;
+                        right: 2%;
+                    }
+                    .sec_price {
+                        display: block;
+                        color: @color;
+                    }
+                    del {
+                        display: block;
+                        color: #666;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 618
+.jd_618 {
+    .jd_618_title {
+        position: relative;
+        >ul {
+            position: absolute;
+            bottom: 5px;
+            li {
+                float: left;
+                width: 50%;
+                >a {
+                    padding: 0 3px;
+                }
+            }
+        }
+    }
+    .jd_618_content {
+        ul {
+            li {
+                float: left;
+                width: 50%;
+            }
+            li:nth-child(-n+3) {
+                width: 33.33%;
+            }
+        }
+    }
+}
+
+// 广告
+.adv {
+    a {
+        padding: 5px;
+    }
+}
+
+//特色超市
+.goods_title {
+    color: skyblue;
+    padding: 0 5px;
+}
+
+.market {
+    .market_content {
+        ul {
+            li {
+                float: left;
+                width: 50%;
+            }
+            li:nth-child(4) {
+                clear: both;
+            }
+        }
+    }
+}
+
+//主题街
+.theme {
+    .theme_content {
+        ul {
+            li {
+                float: left;
+                width: 25%;
+            }
+            li:nth-child(-n+2) {
+                width: 50%;
+            }
+            li:nth-child(5) {
+                clear: both;
+            }
+        }
+    }
+}
+
+//品牌推荐
+.brand {
+    .brand_content {
+        ul {
+            li {
+                float: left;
+                width: 30%;
+                padding: 0 2px;
+            }
+            li:first-child {
+                width: 40%;
+            }
+        }
+    }
+}
+
+//猜你喜欢
+.guess {
+    .guess_title {
+        h4 {
+            >a {
+                float: right;
+                font-weight: normal;
+                font-size: 14px;
+                img {
+                    width: 18px;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    .guess_content {
+        ul {
+            li {
+                float: left;
+                width: 50%;
+                padding: 5px;
+                .item_title {
+                    >span {
+                        color: @color;
+                    }
+                    >a {
+                        float: right;
+                        border: 1px solid #ccc;
+                        color: #666;
+                        font-size: 14px;
+                    }
+                }
+                .item_content {
+                    img {
+                        width: 90%;
+                        margin: 0 auto;
+                    }
+                    >p {
+                        font-size: 14px;
+                        height: 40px;
+                        overflow: hidden;
+                        border-bottom: 1px solid #ccc;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//底部工具栏
+.bottom_tool {
+    background-color: #f3f5f7;
+    color: #666;
+    text-align: center;
+    font-size: 14px;
+    .more {
+        padding: 10px 0;
+        border-top: 1px solid #ccc;
+    }
+    .bottom_link {
+        padding: 10px 0;
+        border-top: 1px solid #ccc;
+        >a {
+            float: left;
+            width: 25%;
+            border-right: 1px solid #000;
+        }
+        >a:last-child {
+            border-right: none;
+        }
+    }
+    .devices {
+        border-top: 1px solid #ccc;
+        padding: 10px 0;
+        a {
+            float: left;
+            width: 33.33%;
+            >span {
+                .jd_sprites(-120px,
+                -70px);
+                width: 33px;
+                height: 33px;
+                display: inline-block;
+            }
+        }
+    }
+    .copyright {
+        border-top: 1px solid #ccc;
+        padding: 10px 0;
+    }
+}
+
+.margin_bottom {
+    visibility: hidden;
+    img {
+        width: 20%;
+    }
+}
+
+//底部
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    a {
+        float: left;
+        width: 20%;
+    }
+}
